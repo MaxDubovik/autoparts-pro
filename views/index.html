@@ -1,94 +1,212 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoParts Pro - Интернет-магазин автозапчастей</title>
+    
+    <!-- Google Fonts - Inter для футуристического вида -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Design System Variables -->
+    <link rel="stylesheet" href="/public/css/variables.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">AutoParts Pro</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#categories">Категории</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: var(--gradient-primary); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#home">
+                <i class="bi bi-gear-fill me-2" style="color: var(--accent); font-size: 1.5rem;"></i>
+                <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AutoParts Pro</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: var(--accent) !important;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#categories">Категории</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#contact">Контакты</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Автозапчасти Премиум Качества</h1>
-            <p>Широкий ассортимент оригинальных и совместимых запчастей для всех марок автомобилей. Быстрая доставка и гарантия качества.</p>
-            <a href="#categories" class="cta-button">Смотреть каталог</a>
+    <section class="hero-section position-relative overflow-hidden" id="home" style="min-height: 100vh; display: flex; align-items: center; background: var(--gradient-hero); padding-top: 80px;">
+        <!-- Animated Background -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.1;">
+            <div class="position-absolute" style="width: 500px; height: 500px; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); top: -200px; left: -200px; animation: float 20s ease-in-out infinite;"></div>
+            <div class="position-absolute" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--secondary) 0%, transparent 70%); bottom: -150px; right: -150px; animation: float 15s ease-in-out infinite reverse;"></div>
+        </div>
+        
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="mb-4" style="animation: fadeInUp 0.8s ease;">
+                        <span class="badge px-3 py-2 mb-3" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur); color: var(--accent); font-weight: 500;">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>Премиум качество
+                        </span>
+                    </div>
+                    <h1 class="display-2 fw-bold mb-4" style="background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeInUp 0.8s ease 0.2s both;">
+                        Автозапчасти<br>Будущего
+                    </h1>
+                    <p class="lead mb-4 text-white-50" style="font-size: 1.25rem; line-height: 1.8; animation: fadeInUp 0.8s ease 0.4s both;">
+                        Широкий ассортимент оригинальных и совместимых запчастей для всех марок автомобилей. Быстрая доставка и гарантия качества.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3" style="animation: fadeInUp 0.8s ease 0.6s both;">
+                        <a href="#categories" class="btn btn-lg px-5 py-3 fw-semibold" style="background: var(--accent-gradient); border: none; border-radius: var(--radius-full); box-shadow: var(--shadow-glow); transition: var(--transition-base);">
+                            Смотреть каталог
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#about" class="btn btn-lg btn-outline-light px-5 py-3 fw-semibold" style="border-radius: var(--radius-full); border-width: 2px;">
+                            Узнать больше
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="position-relative" style="animation: fadeInUp 0.8s ease 0.8s both;">
+                        <div class="position-absolute top-50 start-50 translate-middle" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); opacity: 0.3; border-radius: 50%; filter: blur(60px);"></div>
+                        <div class="position-relative" style="font-size: 12rem; opacity: 0.8;">
+                            <i class="bi bi-gear-fill" style="color: var(--accent); animation: rotate 20s linear infinite;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="info-section">
-        <h2 class="section-title">Почему выбирают нас</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚚</div>
-                <h3>Быстрая доставка</h3>
-                <p>Доставка по всей стране в течение 1-3 дней. Курьерская доставка в день заказа для жителей крупных городов.</p>
+    <section class="py-5" id="features" style="background: var(--primary-dark); position: relative;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Почему выбирают нас</h2>
+                <p class="text-white-50 lead">Инновационные решения для вашего автомобиля</p>
+                <div class="mx-auto" style="width: 80px; height: 4px; background: var(--accent-gradient); border-radius: var(--radius-full); margin-top: 1.5rem;"></div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">✅</div>
-                <h3>Гарантия качества</h3>
-                <p>Все запчасти проходят тщательную проверку. Оригинальные детали с официальной гарантией производителя.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Лучшие цены</h3>
-                <p>Прямые поставки от производителей позволяют предлагать конкурентные цены без переплат.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔧</div>
-                <h3>Профессиональная поддержка</h3>
-                <p>Наши специалисты помогут подобрать нужную запчасть и ответят на все ваши вопросы.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 position-relative overflow-hidden" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base);">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3" style="width: 80px; height: 80px; margin: 0 auto; background: var(--accent-gradient); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow);">
+                                <i class="bi bi-truck fs-1 text-white"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Быстрая доставка</h3>
+                            <p class="text-white-50 mb-0">Доставка по всей стране в течение 1-3 дней. Курьерская доставка в день заказа для жителей крупных городов.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 position-relative overflow-hidden" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base);">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3" style="width: 80px; height: 80px; margin: 0 auto; background: var(--secondary-gradient); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; box-shadow: var(--glow-secondary);">
+                                <i class="bi bi-shield-check fs-1 text-white"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Гарантия качества</h3>
+                            <p class="text-white-50 mb-0">Все запчасти проходят тщательную проверку. Оригинальные детали с официальной гарантией производителя.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 position-relative overflow-hidden" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base);">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3" style="width: 80px; height: 80px; margin: 0 auto; background: linear-gradient(135deg, var(--success) 0%, #00cc6a 100%); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);">
+                                <i class="bi bi-currency-dollar fs-1 text-white"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Лучшие цены</h3>
+                            <p class="text-white-50 mb-0">Прямые поставки от производителей позволяют предлагать конкурентные цены без переплат.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 position-relative overflow-hidden" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base);">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3" style="width: 80px; height: 80px; margin: 0 auto; background: linear-gradient(135deg, var(--info) 0%, #0099cc 100%); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow);">
+                                <i class="bi bi-headset fs-1 text-white"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Профессиональная поддержка</h3>
+                            <p class="text-white-50 mb-0">Наши специалисты помогут подобрать нужную запчасть и ответят на все ваши вопросы.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories-section" id="categories">
-        <div class="categories-container">
-            <h2 class="section-title">Популярные категории</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-image">🔩</div>
-                    <div class="category-info">
-                        <h3>Двигатель</h3>
-                        <p>Поршни, кольца, прокладки, масляные фильтры и другие компоненты двигателя</p>
+    <section class="py-5" id="categories" style="background: var(--primary); position: relative;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Популярные категории</h2>
+                <p class="text-white-50 lead">Выберите нужную категорию запчастей</p>
+                <div class="mx-auto" style="width: 80px; height: 4px; background: var(--accent-gradient); border-radius: var(--radius-full); margin-top: 1.5rem;"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 overflow-hidden position-relative" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base); cursor: pointer;">
+                        <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                            <div style="font-size: 5rem; opacity: 0.9;">🔩</div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, transparent 100%);"></div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-2">Двигатель</h3>
+                            <p class="text-white-50 small mb-0">Поршни, кольца, прокладки, масляные фильтры и другие компоненты двигателя</p>
+                        </div>
                     </div>
                 </div>
-                <div class="category-card">
-                    <div class="category-image">🛞</div>
-                    <div class="category-info">
-                        <h3>Ходовая часть</h3>
-                        <p>Амортизаторы, стойки, пружины, сайлентблоки и элементы подвески</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 overflow-hidden position-relative" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base); cursor: pointer;">
+                        <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center;">
+                            <div style="font-size: 5rem; opacity: 0.9;">🛞</div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, transparent 100%);"></div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-2">Ходовая часть</h3>
+                            <p class="text-white-50 small mb-0">Амортизаторы, стойки, пружины, сайлентблоки и элементы подвески</p>
+                        </div>
                     </div>
                 </div>
-                <div class="category-card">
-                    <div class="category-image">💡</div>
-                    <div class="category-info">
-                        <h3>Освещение</h3>
-                        <p>Фары, лампы, поворотники, стоп-сигналы и светодиодное оборудование</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 overflow-hidden position-relative" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base); cursor: pointer;">
+                        <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+                            <div style="font-size: 5rem; opacity: 0.9;">💡</div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, transparent 100%);"></div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-2">Освещение</h3>
+                            <p class="text-white-50 small mb-0">Фары, лампы, поворотники, стоп-сигналы и светодиодное оборудование</p>
+                        </div>
                     </div>
                 </div>
-                <div class="category-card">
-                    <div class="category-image">🔄</div>
-                    <div class="category-info">
-                        <h3>Тормозная система</h3>
-                        <p>Колодки, диски, суппорты, тормозные жидкости и шланги</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 overflow-hidden position-relative" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); transition: var(--transition-base); cursor: pointer;">
+                        <div class="position-relative" style="height: 200px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); display: flex; align-items: center; justify-content: center;">
+                            <div style="font-size: 5rem; opacity: 0.9;">🔄</div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, transparent 100%);"></div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-2">Тормозная система</h3>
+                            <p class="text-white-50 small mb-0">Колодки, диски, суппорты, тормозные жидкости и шланги</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,78 +214,101 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <div class="about-text">
-                <h3>О нашей компании</h3>
-                <p>AutoParts Pro — это надежный партнер в мире автозапчастей. Мы работаем на рынке уже более 10 лет и за это время заслужили доверие тысяч автовладельцев.</p>
-                <p>Наш склад насчитывает более 50,000 наименований запчастей для всех популярных марок автомобилей. Мы сотрудничаем только с проверенными поставщиками и гарантируем качество каждой детали.</p>
-                <p>Наша миссия — сделать обслуживание автомобиля простым, быстрым и доступным для каждого.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Лет на рынке</div>
+    <section class="py-5" id="about" style="background: var(--primary-dark);">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="badge px-3 py-2 mb-3" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur); color: var(--accent); font-weight: 500;">
+                        О компании
+                    </span>
+                    <h2 class="display-4 fw-bold mb-4">AutoParts Pro</h2>
+                    <p class="lead text-white-50 mb-4">Надежный партнер в мире автозапчастей. Мы работаем на рынке уже более 10 лет и за это время заслужили доверие тысяч автовладельцев.</p>
+                    <p class="text-white-50 mb-4">Наш склад насчитывает более 50,000 наименований запчастей для всех популярных марок автомобилей. Мы сотрудничаем только с проверенными поставщиками и гарантируем качество каждой детали.</p>
+                    <p class="text-white-50 mb-4">Наша миссия — сделать обслуживание автомобиля простым, быстрым и доступным для каждого.</p>
+                    <a href="#contact" class="btn btn-lg px-4 py-2" style="background: var(--accent-gradient); border: none; border-radius: var(--radius-full); box-shadow: var(--shadow-glow);">
+                        Связаться с нами
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Товаров в каталоге</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">25K+</div>
-                    <div class="stat-label">Довольных клиентов</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Поддержка клиентов</div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="card border-0 h-100" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
+                                <div class="display-3 fw-bold mb-2" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">10+</div>
+                                <div class="text-white-50">Лет на рынке</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 h-100" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
+                                <div class="display-3 fw-bold mb-2" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">50K+</div>
+                                <div class="text-white-50">Товаров в каталоге</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 h-100" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
+                                <div class="display-3 fw-bold mb-2" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">25K+</div>
+                                <div class="text-white-50">Довольных клиентов</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card border-0 h-100" style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border) !important; border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
+                                <div class="display-3 fw-bold mb-2" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">24/7</div>
+                                <div class="text-white-50">Поддержка клиентов</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>AutoParts Pro</h3>
-                <p>Ваш надежный поставщик автозапчастей. Качество, скорость, выгодные цены.</p>
+    <footer class="py-5" id="contact" style="background: var(--gradient-primary); border-top: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h5 fw-bold mb-3" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AutoParts Pro</h3>
+                    <p class="text-white-50">Ваш надежный поставщик автозапчастей. Качество, скорость, выгодные цены.</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h5 fw-bold mb-3" style="color: var(--accent);">Категории</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Двигатель</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Ходовая часть</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Освещение</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Тормозная система</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Электрика</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h5 fw-bold mb-3" style="color: var(--accent);">Информация</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">О компании</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Доставка и оплата</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Гарантия</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Возврат товара</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none" style="transition: var(--transition-fast);">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h3 class="h5 fw-bold mb-3" style="color: var(--accent);">Контакты</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-white-50"><i class="bi bi-telephone me-2" style="color: var(--accent);"></i>+7 (800) 123-45-67</li>
+                        <li class="mb-2 text-white-50"><i class="bi bi-envelope me-2" style="color: var(--accent);"></i>info@autopartspro.ru</li>
+                        <li class="mb-2 text-white-50"><i class="bi bi-geo-alt me-2" style="color: var(--accent);"></i>Москва, ул. Автозаводская, 15</li>
+                        <li class="mb-2 text-white-50"><i class="bi bi-clock me-2" style="color: var(--accent);"></i>Пн-Пт: 9:00 - 20:00</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Категории</h3>
-                <ul>
-                    <li><a href="#">Двигатель</a></li>
-                    <li><a href="#">Ходовая часть</a></li>
-                    <li><a href="#">Освещение</a></li>
-                    <li><a href="#">Тормозная система</a></li>
-                    <li><a href="#">Электрика</a></li>
-                </ul>
+            <div class="text-center pt-4 border-top" style="border-color: var(--glass-border) !important;">
+                <p class="mb-0 text-white-50">&copy; 2024 AutoParts Pro. Все права защищены.</p>
             </div>
-            <div class="footer-section">
-                <h3>Информация</h3>
-                <ul>
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Доставка и оплата</a></li>
-                    <li><a href="#">Гарантия</a></li>
-                    <li><a href="#">Возврат товара</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Контакты</h3>
-                <ul>
-                    <li>📞 +7 (800) 123-45-67</li>
-                    <li>✉️ info@autopartspro.ru</li>
-                    <li>📍 Москва, ул. Автозаводская, 15</li>
-                    <li>🕐 Пн-Пт: 9:00 - 20:00</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 AutoParts Pro. Все права защищены.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="/public/js/main.js"></script>
 </body>
 </html>
-

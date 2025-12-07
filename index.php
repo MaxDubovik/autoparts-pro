@@ -39,6 +39,10 @@ class Router {
         // Remove leading slash
         $uri = ltrim($uri, '/');
         
+        // Remove index.php if present
+        $uri = str_replace('index.php', '', $uri);
+        $uri = ltrim($uri, '/');
+        
         // Default route - show index view
         if (empty($uri) || $uri === 'index.php') {
             $this->renderView('index');
@@ -66,7 +70,7 @@ class Router {
         
         // 404 - Not found
         http_response_code(404);
-        echo "404 - Page not found";
+        echo "404 - Page not found: " . htmlspecialchars($uri);
     }
     
     private function renderView($viewName, $data = []) {
@@ -88,6 +92,15 @@ class Router {
 
 // Initialize router
 $router = new Router();
+
+// Admin routes
+$router->addRoute('GET', 'admin', 'AdminController', 'index');
+$router->addRoute('GET', 'admin/products', 'AdminController', 'products');
+$router->addRoute('GET', 'admin/categories', 'AdminController', 'categories');
+$router->addRoute('GET', 'admin/orders', 'AdminController', 'orders');
+$router->addRoute('GET', 'admin/users', 'AdminController', 'users');
+$router->addRoute('GET', 'admin/settings', 'AdminController', 'settings');
+$router->addRoute('GET', 'admin/logout', 'AdminController', 'logout');
 
 // Example routes (uncomment when controllers are created)
 // $router->addRoute('GET', 'products', 'ProductController', 'index');

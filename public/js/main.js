@@ -111,26 +111,43 @@ function animateNumber(element) {
 }
 
 /**
- * Initialize mobile menu toggle (for future mobile menu implementation)
+ * Initialize mobile menu toggle and navbar effects
  */
 function initMobileMenu() {
-    // TODO: Add mobile menu toggle when hamburger menu is added
-    const nav = document.querySelector('nav');
+    const navbar = document.querySelector('.navbar');
     
-    // Add active class on scroll for header
-    let lastScroll = 0;
-    const header = document.querySelector('header');
-    
+    // Add scrolled class on scroll for navbar
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.4)';
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
         } else {
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            navbar.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
+    });
+    
+    // Add intersection observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
     });
 }
 
