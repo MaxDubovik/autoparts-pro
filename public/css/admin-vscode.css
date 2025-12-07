@@ -1,0 +1,597 @@
+/**
+ * Admin Panel - VS Code / Cursor Style
+ * Светлая тема с минималистичным дизайном
+ */
+
+:root {
+    /* VS Code Color Palette - Light Theme */
+    --vscode-bg: #ffffff;
+    --vscode-bg-secondary: #f3f3f3;
+    --vscode-bg-tertiary: #e8e8e8;
+    --vscode-sidebar: #f8f8f8;
+    --vscode-sidebar-hover: #e8e8e8;
+    --vscode-border: #e8e8e8;
+    --vscode-border-dark: #d4d4d4;
+    
+    /* Text Colors */
+    --vscode-text: #333333;
+    --vscode-text-secondary: #666666;
+    --vscode-text-muted: #999999;
+    
+    /* Accent Colors */
+    --vscode-accent: #007acc;
+    --vscode-accent-hover: #005a9e;
+    --vscode-accent-light: #e7f5ff;
+    
+    /* Status Colors */
+    --vscode-success: #28a745;
+    --vscode-warning: #ffc107;
+    --vscode-danger: #dc3545;
+    --vscode-info: #17a2b8;
+    
+    /* Shadows */
+    --vscode-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --vscode-shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --vscode-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Spacing */
+    --vscode-spacing-xs: 0.25rem;
+    --vscode-spacing-sm: 0.5rem;
+    --vscode-spacing-md: 1rem;
+    --vscode-spacing-lg: 1.5rem;
+    --vscode-spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --vscode-radius: 4px;
+    --vscode-radius-sm: 2px;
+    
+    /* Transitions */
+    --vscode-transition: 0.15s ease;
+}
+
+/* Base Styles */
+body.admin-vscode {
+    background: var(--vscode-bg);
+    color: var(--vscode-text);
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    background: var(--vscode-sidebar);
+    border-right: 1px solid var(--vscode-border);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.admin-sidebar-header {
+    padding: var(--vscode-spacing-md);
+    border-bottom: 1px solid var(--vscode-border);
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-sm);
+    background: var(--vscode-bg);
+}
+
+.admin-sidebar-logo {
+    width: 32px;
+    height: 32px;
+    background: var(--vscode-accent);
+    border-radius: var(--vscode-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.admin-sidebar-brand {
+    font-weight: 600;
+    color: var(--vscode-text);
+    font-size: 14px;
+}
+
+/* Sidebar Navigation */
+.admin-sidebar-nav {
+    padding: var(--vscode-spacing-sm) 0;
+}
+
+.admin-sidebar-nav .nav-item {
+    margin: 0;
+}
+
+.admin-sidebar-nav .nav-link {
+    color: var(--vscode-text);
+    padding: var(--vscode-spacing-sm) var(--vscode-spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-sm);
+    border-radius: 0;
+    transition: var(--vscode-transition);
+    font-size: 13px;
+    border-left: 3px solid transparent;
+}
+
+.admin-sidebar-nav .nav-link:hover {
+    background: var(--vscode-sidebar-hover);
+    color: var(--vscode-text);
+    border-left-color: var(--vscode-border-dark);
+}
+
+.admin-sidebar-nav .nav-link.active {
+    background: var(--vscode-accent-light);
+    color: var(--vscode-accent);
+    border-left-color: var(--vscode-accent);
+    font-weight: 500;
+}
+
+.admin-sidebar-nav .nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Top Bar */
+.admin-topbar {
+    background: var(--vscode-bg);
+    border-bottom: 1px solid var(--vscode-border);
+    height: 48px;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--vscode-spacing-md);
+    box-shadow: var(--vscode-shadow-sm);
+}
+
+.admin-topbar-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vscode-text);
+    margin: 0;
+}
+
+.admin-topbar-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-md);
+}
+
+.admin-topbar-link {
+    color: var(--vscode-text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    transition: var(--vscode-transition);
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-xs);
+}
+
+.admin-topbar-link:hover {
+    color: var(--vscode-accent);
+}
+
+/* Main Content */
+.admin-content {
+    margin-left: 250px;
+    margin-top: 48px;
+    padding: var(--vscode-spacing-lg);
+    min-height: calc(100vh - 48px);
+    background: var(--vscode-bg-secondary);
+}
+
+/* Cards */
+.admin-card {
+    background: var(--vscode-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: var(--vscode-radius);
+    box-shadow: var(--vscode-shadow-sm);
+    margin-bottom: var(--vscode-spacing-md);
+    overflow: hidden;
+}
+
+.admin-card-header {
+    padding: var(--vscode-spacing-md);
+    border-bottom: 1px solid var(--vscode-border);
+    background: var(--vscode-bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vscode-text);
+    margin: 0;
+}
+
+.admin-card-body {
+    padding: var(--vscode-spacing-md);
+}
+
+.admin-card-footer {
+    padding: var(--vscode-spacing-sm) var(--vscode-spacing-md);
+    border-top: 1px solid var(--vscode-border);
+    background: var(--vscode-bg-secondary);
+}
+
+/* Stats Cards */
+.admin-stat-card {
+    background: var(--vscode-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: var(--vscode-radius);
+    padding: var(--vscode-spacing-md);
+    transition: var(--vscode-transition);
+    cursor: pointer;
+}
+
+.admin-stat-card:hover {
+    box-shadow: var(--vscode-shadow-md);
+    border-color: var(--vscode-border-dark);
+}
+
+.admin-stat-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--vscode-text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.admin-stat-label {
+    font-size: 12px;
+    color: var(--vscode-text-secondary);
+    margin-top: var(--vscode-spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--vscode-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--vscode-spacing-sm);
+    font-size: 18px;
+}
+
+.admin-stat-icon.info {
+    background: var(--vscode-accent-light);
+    color: var(--vscode-accent);
+}
+
+.admin-stat-icon.success {
+    background: #e8f5e9;
+    color: var(--vscode-success);
+}
+
+.admin-stat-icon.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.admin-stat-icon.danger {
+    background: #f8d7da;
+    color: var(--vscode-danger);
+}
+
+/* Tables */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.admin-table thead {
+    background: var(--vscode-bg-secondary);
+}
+
+.admin-table th {
+    padding: var(--vscode-spacing-sm) var(--vscode-spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--vscode-text);
+    border-bottom: 2px solid var(--vscode-border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    padding: var(--vscode-spacing-sm) var(--vscode-spacing-md);
+    border-bottom: 1px solid var(--vscode-border);
+    color: var(--vscode-text);
+}
+
+.admin-table tbody tr {
+    transition: var(--vscode-transition);
+}
+
+.admin-table tbody tr:hover {
+    background: var(--vscode-bg-secondary);
+}
+
+.admin-table a {
+    color: var(--vscode-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.admin-table a:hover {
+    text-decoration: underline;
+}
+
+/* Badges */
+.admin-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: var(--vscode-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-badge-success {
+    background: #e8f5e9;
+    color: var(--vscode-success);
+}
+
+.admin-badge-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.admin-badge-info {
+    background: var(--vscode-accent-light);
+    color: var(--vscode-accent);
+}
+
+.admin-badge-danger {
+    background: #f8d7da;
+    color: var(--vscode-danger);
+}
+
+/* Buttons */
+.admin-btn {
+    padding: var(--vscode-spacing-xs) var(--vscode-spacing-md);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--vscode-border);
+    border-radius: var(--vscode-radius);
+    background: var(--vscode-bg);
+    color: var(--vscode-text);
+    cursor: pointer;
+    transition: var(--vscode-transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--vscode-spacing-xs);
+}
+
+.admin-btn:hover {
+    background: var(--vscode-bg-secondary);
+    border-color: var(--vscode-border-dark);
+    color: var(--vscode-text);
+}
+
+.admin-btn-primary {
+    background: var(--vscode-accent);
+    color: white;
+    border-color: var(--vscode-accent);
+}
+
+.admin-btn-primary:hover {
+    background: var(--vscode-accent-hover);
+    border-color: var(--vscode-accent-hover);
+    color: white;
+}
+
+.admin-btn-sm {
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+/* Breadcrumbs */
+.admin-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-xs);
+    font-size: 12px;
+    color: var(--vscode-text-secondary);
+    margin-bottom: var(--vscode-spacing-md);
+}
+
+.admin-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-xs);
+}
+
+.admin-breadcrumb-item a {
+    color: var(--vscode-accent);
+    text-decoration: none;
+}
+
+.admin-breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.admin-breadcrumb-item.active {
+    color: var(--vscode-text);
+}
+
+.admin-breadcrumb-separator {
+    color: var(--vscode-text-muted);
+}
+
+/* Product List */
+.admin-product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-product-item {
+    padding: var(--vscode-spacing-md);
+    border-bottom: 1px solid var(--vscode-border);
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-md);
+    transition: var(--vscode-transition);
+}
+
+.admin-product-item:hover {
+    background: var(--vscode-bg-secondary);
+}
+
+.admin-product-item:last-child {
+    border-bottom: none;
+}
+
+.admin-product-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--vscode-bg-secondary);
+    border: 1px solid var(--vscode-border);
+    border-radius: var(--vscode-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vscode-text-secondary);
+}
+
+.admin-product-info {
+    flex: 1;
+}
+
+.admin-product-title {
+    font-weight: 500;
+    color: var(--vscode-text);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.admin-product-title:hover {
+    color: var(--vscode-accent);
+}
+
+.admin-product-desc {
+    font-size: 12px;
+    color: var(--vscode-text-secondary);
+    margin-top: 2px;
+}
+
+/* Scrollbar */
+.admin-sidebar::-webkit-scrollbar,
+.admin-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track,
+.admin-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb,
+.admin-content::-webkit-scrollbar-thumb {
+    background: var(--vscode-border-dark);
+    border-radius: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover,
+.admin-content::-webkit-scrollbar-thumb:hover {
+    background: var(--vscode-text-muted);
+}
+
+/* User Panel (optional) */
+.admin-user-panel {
+    padding: var(--vscode-spacing-md);
+    border-top: 1px solid var(--vscode-border);
+    margin-top: auto;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--vscode-spacing-sm);
+    padding: var(--vscode-spacing-sm);
+    border-radius: var(--vscode-radius);
+    transition: var(--vscode-transition);
+}
+
+.admin-user-info:hover {
+    background: var(--vscode-sidebar-hover);
+}
+
+.admin-user-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--vscode-accent);
+    border-radius: var(--vscode-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.admin-user-details {
+    flex: 1;
+}
+
+.admin-user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vscode-text);
+    margin: 0;
+}
+
+.admin-user-role {
+    font-size: 11px;
+    color: var(--vscode-text-secondary);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: var(--vscode-shadow-lg);
+    }
+    
+    .admin-sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .admin-topbar {
+        left: 0;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+        padding: var(--vscode-spacing-md);
+    }
+    
+    .admin-stat-card {
+        margin-bottom: var(--vscode-spacing-sm);
+    }
+}
+

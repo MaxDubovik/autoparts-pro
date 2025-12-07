@@ -1,22 +1,36 @@
 /**
  * Admin Panel JavaScript
- * Функциональность для админ-панели
+ * Функциональность для админ-панели (VS Code Style)
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Инициализация всех компонентов
-    initTooltips();
+    initMobileMenu();
     initConfirmDialogs();
     initDataTables();
+    initStatCards();
 });
 
 /**
- * Инициализация tooltips
+ * Инициализация мобильного меню
  */
-function initTooltips() {
-    // Bootstrap tooltips будут инициализированы через AdminLTE
-    if (typeof $ !== 'undefined') {
-        $('[data-toggle="tooltip"]').tooltip();
+function initMobileMenu() {
+    // Для мобильных устройств - кнопка открытия сайдбара
+    const sidebar = document.querySelector('.admin-sidebar');
+    const topbar = document.querySelector('.admin-topbar');
+    
+    if (window.innerWidth <= 768) {
+        // Создаем кнопку меню для мобильных
+        if (!document.querySelector('.mobile-menu-btn')) {
+            const menuBtn = document.createElement('button');
+            menuBtn.className = 'mobile-menu-btn admin-btn';
+            menuBtn.innerHTML = '<i class="bi bi-list"></i>';
+            menuBtn.style.marginRight = '1rem';
+            menuBtn.onclick = function() {
+                sidebar.classList.toggle('open');
+            };
+            topbar.insertBefore(menuBtn, topbar.firstChild);
+        }
     }
 }
 
@@ -81,5 +95,22 @@ function formatDate(dateString) {
         month: 'long',
         day: 'numeric'
     }).format(date);
+}
+
+/**
+ * Инициализация статистических карточек
+ */
+function initStatCards() {
+    const statCards = document.querySelectorAll('.admin-stat-card');
+    
+    statCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Можно добавить переход на соответствующую страницу
+            const link = this.querySelector('a');
+            if (link) {
+                window.location.href = link.href;
+            }
+        });
+    });
 }
 

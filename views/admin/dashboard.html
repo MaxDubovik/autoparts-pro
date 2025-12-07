@@ -1,166 +1,148 @@
-<!-- Small boxes (Stat box) -->
-<div class="row">
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-info">
-            <div class="inner">
-                <h3>150</h3>
-                <p>Новых заказов</p>
+<!-- Stats Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-lg-3 col-md-6">
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon info">
+                <i class="bi bi-cart"></i>
             </div>
-            <div class="icon">
-                <i class="ion ion-bag"></i>
-            </div>
-            <a href="/admin/orders" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="admin-stat-value">150</div>
+            <div class="admin-stat-label">Новых заказов</div>
         </div>
     </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-success">
-            <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-                <p>Рост продаж</p>
+    <div class="col-lg-3 col-md-6">
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon success">
+                <i class="bi bi-graph-up"></i>
             </div>
-            <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="admin-stat-value">53<small style="font-size: 18px;">%</small></div>
+            <div class="admin-stat-label">Рост продаж</div>
         </div>
     </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-warning">
-            <div class="inner">
-                <h3>44</h3>
-                <p>Пользователей</p>
+    <div class="col-lg-3 col-md-6">
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon warning">
+                <i class="bi bi-people"></i>
             </div>
-            <div class="icon">
-                <i class="ion ion-person-add"></i>
-            </div>
-            <a href="/admin/users" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="admin-stat-value">44</div>
+            <div class="admin-stat-label">Пользователей</div>
         </div>
     </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-danger">
-            <div class="inner">
-                <h3>65</h3>
-                <p>Товаров</p>
+    <div class="col-lg-3 col-md-6">
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon danger">
+                <i class="bi bi-box"></i>
             </div>
-            <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="/admin/products" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="admin-stat-value">65</div>
+            <div class="admin-stat-label">Товаров</div>
         </div>
     </div>
 </div>
 
-<!-- Main row -->
-<div class="row">
-    <section class="col-lg-7 connectedSortable">
-        <!-- Recent Orders -->
-        <div class="card">
-            <div class="card-header border-transparent">
-                <h3 class="card-title">Последние заказы</h3>
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
+<!-- Main Content Row -->
+<div class="row g-3">
+    <!-- Recent Orders -->
+    <div class="col-lg-7">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h3 class="admin-card-title">Последние заказы</h3>
+                <a href="/admin/orders" class="admin-btn admin-btn-sm admin-btn-primary">Все заказы</a>
             </div>
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table m-0">
-                        <thead>
-                            <tr>
-                                <th>ID заказа</th>
-                                <th>Клиент</th>
-                                <th>Статус</th>
-                                <th>Сумма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="/admin/orders/1">#12345</a></td>
-                                <td>Иван Иванов</td>
-                                <td><span class="badge badge-success">Оплачен</span></td>
-                                <td>15,000 ₽</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/admin/orders/2">#12344</a></td>
-                                <td>Петр Петров</td>
-                                <td><span class="badge badge-warning">В обработке</span></td>
-                                <td>8,500 ₽</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/admin/orders/3">#12343</a></td>
-                                <td>Мария Сидорова</td>
-                                <td><span class="badge badge-info">Новый</span></td>
-                                <td>12,300 ₽</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card-footer clearfix">
-                <a href="/admin/orders" class="btn btn-sm btn-info float-right">Все заказы</a>
+            <div class="admin-card-body p-0">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID заказа</th>
+                            <th>Клиент</th>
+                            <th>Статус</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="/admin/orders/1">#12345</a></td>
+                            <td>Иван Иванов</td>
+                            <td><span class="admin-badge admin-badge-success">Оплачен</span></td>
+                            <td>15,000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td><a href="/admin/orders/2">#12344</a></td>
+                            <td>Петр Петров</td>
+                            <td><span class="admin-badge admin-badge-warning">В обработке</span></td>
+                            <td>8,500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td><a href="/admin/orders/3">#12343</a></td>
+                            <td>Мария Сидорова</td>
+                            <td><span class="admin-badge admin-badge-info">Новый</span></td>
+                            <td>12,300 ₽</td>
+                        </tr>
+                        <tr>
+                            <td><a href="/admin/orders/4">#12342</a></td>
+                            <td>Алексей Смирнов</td>
+                            <td><span class="admin-badge admin-badge-success">Оплачен</span></td>
+                            <td>22,500 ₽</td>
+                        </tr>
+                        <tr>
+                            <td><a href="/admin/orders/5">#12341</a></td>
+                            <td>Елена Козлова</td>
+                            <td><span class="admin-badge admin-badge-warning">В обработке</span></td>
+                            <td>9,800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="col-lg-5 connectedSortable">
-        <!-- Popular Products -->
-        <div class="card">
-            <div class="card-header border-transparent">
-                <h3 class="card-title">Популярные товары</h3>
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
+    <!-- Popular Products -->
+    <div class="col-lg-5">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h3 class="admin-card-title">Популярные товары</h3>
             </div>
-            <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                    <li class="item">
-                        <div class="product-img">
-                            <i class="fas fa-cog fa-2x text-gray"></i>
+            <div class="admin-card-body p-0">
+                <ul class="admin-product-list">
+                    <li class="admin-product-item">
+                        <div class="admin-product-icon">
+                            <i class="bi bi-gear"></i>
                         </div>
-                        <div class="product-info">
-                            <a href="/admin/products/1" class="product-title">Тормозные колодки
-                                <span class="badge badge-warning float-right">15,000 ₽</span>
-                            </a>
-                            <span class="product-description">
-                                Продано: 45 шт.
-                            </span>
+                        <div class="admin-product-info">
+                            <a href="/admin/products/1" class="admin-product-title">Тормозные колодки</a>
+                            <div class="admin-product-desc">Продано: 45 шт. • 15,000 ₽</div>
                         </div>
                     </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <i class="fas fa-cog fa-2x text-gray"></i>
+                    <li class="admin-product-item">
+                        <div class="admin-product-icon">
+                            <i class="bi bi-gear"></i>
                         </div>
-                        <div class="product-info">
-                            <a href="/admin/products/2" class="product-title">Масляный фильтр
-                                <span class="badge badge-warning float-right">850 ₽</span>
-                            </a>
-                            <span class="product-description">
-                                Продано: 32 шт.
-                            </span>
+                        <div class="admin-product-info">
+                            <a href="/admin/products/2" class="admin-product-title">Масляный фильтр</a>
+                            <div class="admin-product-desc">Продано: 32 шт. • 850 ₽</div>
                         </div>
                     </li>
-                    <li class="item">
-                        <div class="product-img">
-                            <i class="fas fa-cog fa-2x text-gray"></i>
+                    <li class="admin-product-item">
+                        <div class="admin-product-icon">
+                            <i class="bi bi-gear"></i>
                         </div>
-                        <div class="product-info">
-                            <a href="/admin/products/3" class="product-title">Амортизатор
-                                <span class="badge badge-warning float-right">4,500 ₽</span>
-                            </a>
-                            <span class="product-description">
-                                Продано: 28 шт.
-                            </span>
+                        <div class="admin-product-info">
+                            <a href="/admin/products/3" class="admin-product-title">Амортизатор</a>
+                            <div class="admin-product-desc">Продано: 28 шт. • 4,500 ₽</div>
+                        </div>
+                    </li>
+                    <li class="admin-product-item">
+                        <div class="admin-product-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <div class="admin-product-info">
+                            <a href="/admin/products/4" class="admin-product-title">Свечи зажигания</a>
+                            <div class="admin-product-desc">Продано: 24 шт. • 1,200 ₽</div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="card-footer text-center">
-                <a href="/admin/products" class="uppercase">Все товары</a>
+            <div class="admin-card-footer">
+                <a href="/admin/products" class="admin-btn admin-btn-sm">Все товары →</a>
             </div>
         </div>
-    </section>
+    </div>
 </div>
-
